@@ -1,0 +1,72 @@
+### MOTD ###
+function Get-MOTD {
+
+	# Name: Get-MOTD
+	# Version: 0.0.0.5
+	# Author: Michal Millar
+	# https://github.com/michalmillar
+	# http://www.bolis.com
+	# https://github.com/mmillar-bolis/ps-motd/blob/master/Get-MOTD.ps1
+	# Stripped down verion of this code that only provides the information we care about
+
+	Clear-Host
+	$lastmodified = Get-Item C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 | Select-Object -ExpandProperty LastWriteTime | Get-Date -Format g
+	$Shell_Info = "{0}.{1}" -f $PSVersionTable.PSVersion.Major,$PSVersionTable.PSVersion.Minor
+	Write-Host -Object ("")
+	Write-Host -Object ("")
+	Write-Host -Object ("         ,.=:^!^!t3Z3z.,                  ") -ForegroundColor Red
+	Write-Host -Object ("        :tt:::tt333EE3                    ") -ForegroundColor Red
+	Write-Host -Object ("        Et:::ztt33EEE ") -NoNewline -ForegroundColor Red
+	Write-Host -Object (" @Ee.,      ..,     Welcome To The UMIACS Windows Shell") -ForegroundColor Green
+	Write-Host -Object ("       ;tt:::tt333EE7") -NoNewline -ForegroundColor Red
+	Write-Host -Object (" ;EEEEEEttttt33#     For a list of functions, type help") -ForegroundColor Green
+	Write-Host -Object ("      :Et:::zt333EEQ.") -NoNewline -ForegroundColor Red
+	Write-Host -Object (" SEEEEEttttt33QL     ") -ForegroundColor Green
+	Write-Host -Object ("      it::::tt333EEF") -NoNewline -ForegroundColor Red
+	Write-Host -Object (" @EEEEEEttttt33F      ") -NoNewline -ForegroundColor Green
+
+	Write-Host -Object ("User: ") -NoNewline -ForegroundColor Red
+	Write-Host -Object ("$domainprefix$env:UserName") -ForegroundColor Cyan
+
+	Write-Host -Object ("     ;3=*^``````'*4EEV") -NoNewline -ForegroundColor Red
+	Write-Host -Object (" :EEEEEEttttt33@.      ") -NoNewline -ForegroundColor Green
+
+	Write-Host -Object ("Hostname: ") -NoNewline -ForegroundColor Red
+	Write-Host -Object ("$($env:COMPUTERNAME.ToLower()+"."+$currentdomain)") -ForegroundColor Cyan
+
+	Write-Host -Object ("     ,.=::::it=., ") -NoNewline -ForegroundColor Cyan
+	Write-Host -Object ("``") -NoNewline -ForegroundColor Red
+	Write-Host -Object (" @EEEEEEtttz33QF       ") -NoNewline -ForegroundColor Green
+
+	Write-Host -Object ("Shell: ") -NoNewline -ForegroundColor Red
+	Write-Host -Object ("Powershell $Shell_Info") -ForegroundColor Cyan
+
+	Write-Host -Object ("    ;::::::::zt33) ") -NoNewline -ForegroundColor Cyan
+	Write-Host -Object ("  '4EEEtttji3P*        ") -NoNewline -ForegroundColor Green
+
+	Write-Host -Object ("Profile Version: ") -NoNewline -ForegroundColor Red
+	Write-Host -Object ("$profileversion") -ForegroundColor Cyan
+
+	Write-Host -Object ("   :t::::::::tt33.") -NoNewline -ForegroundColor Cyan
+	Write-Host -Object (":Z3z.. ") -NoNewline -ForegroundColor Yellow
+	Write-Host -Object (" ````") -NoNewline -ForegroundColor Green
+	Write-Host -Object (" ,..g.        ") -NoNewline -ForegroundColor Yellow
+
+	Write-Host -Object ("Last Modified: ") -NoNewline -ForegroundColor Red
+	Write-Host -Object ("$lastmodified") -ForegroundColor Cyan
+
+	Write-Host -Object ("   i::::::::zt33F") -NoNewline -ForegroundColor Cyan
+	Write-Host -Object (" AEEEtttt::::ztF         ") -ForegroundColor Yellow
+	Write-Host -Object ("  ;:::::::::t33V") -NoNewline -ForegroundColor Cyan
+	Write-Host -Object (" ;EEEttttt::::t3          ") -ForegroundColor Yellow
+	Write-Host -Object ("  E::::::::zt33L") -NoNewline -ForegroundColor Cyan
+	Write-Host -Object (" @EEEtttt::::z3F          ") -ForegroundColor Yellow
+	Write-Host -Object (" {3=*^``````'*4E3)") -NoNewline -ForegroundColor Cyan
+	Write-Host -Object (" ;EEEtttt:::::tZ``          ") -ForegroundColor Yellow
+	Write-Host -Object ("             ``") -NoNewline -ForegroundColor Cyan
+	Write-Host -Object (" :EEEEtttt::::z7            ") -ForegroundColor Yellow
+	Write-Host -Object ("                 'VEzjt:;;z>*``           ") -ForegroundColor Yellow
+	Write-Host -Object ("                      ````                  ") -ForegroundColor Yellow
+	Write-Host -Object ("")
+
+}
